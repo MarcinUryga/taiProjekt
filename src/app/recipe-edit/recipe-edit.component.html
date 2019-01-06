@@ -1,3 +1,81 @@
-<p>
-  recipe-edit works!
-</p>
+<div class="wrapper">
+
+  <mat-card class="main">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit(recipeForm.value)">
+      <mat-card-title><h2>{{isEdit ? 'Edit' : 'Add'}} Recipe</h2></mat-card-title>
+
+      <mat-card-content>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Recipe Name" formControlName="title"
+                  required name="title">
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <textarea matInput placeholder="Description" formControlName="description"
+                required name="description"></textarea>
+        </mat-form-field>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Cooking time" formControlName="cookTime"
+                  required name="cookTime">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Prepare Time" formControlName="prepareTime"
+                  required name="prepareTime">
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <textarea matInput placeholder="Prepare description" formControlName="prepareDescription"
+                required name="prepareDescription"></textarea>
+        </mat-form-field>
+
+        <div formArrayName="ingredients">
+          <div>
+            <h2>Ingredients: </h2>
+          </div>
+          <div class="ingredients-wrapper">
+            <div *ngFor="let item of ingredients.controls; let ingredientIndex=index; index as i" [formGroupName]="ingredientIndex">
+              <div class="ingredient-wrapper">
+                <mat-card>
+                    <mat-card-title><h2>#{{i+1}}</h2></mat-card-title>
+                    <mat-card-content>
+                      <div>
+                        <mat-form-field>
+                          <input matInput placeholder="Ingredient Name" formControlName="name"
+                                required name="name">
+                        </mat-form-field>
+                      </div>
+                      <div>
+                        <mat-form-field>
+                          <input matInput placeholder="Ingredient Quantity" formControlName="quantity"
+                                required name="quantity">
+                        </mat-form-field>
+                      </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-raised-button color="error" (click)="deleteIngredient(ingredientIndex)"
+                              type="button">Delete this one</button>
+                    </mat-card-actions>
+                  </mat-card>
+                </div>
+              </div>
+            </div>
+            <button mat-raised-button color="primary" type="button"
+                    (click)="addIngredient()" style="margin-top: 10px;">Add new ingredient</button>
+          </div>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary"
+                type="submit">Save recipe</button>
+        <button mat-raised-button color="error"
+                type="button" [routerLink]="['/recipes-json']">Cancel</button>
+      </mat-card-actions>
+
+    </form>
+  </mat-card>
+</div>

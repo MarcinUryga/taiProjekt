@@ -5,11 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { CarListComponent } from './car-list/car-list.component';
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarEditComponent } from './car-edit/car-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OktaAuthModule } from '@okta/okta-angular';
 import { AuthInterceptor } from './shared/okta/auth.interceptor';
 import { HomeComponent } from './home/home.component';
@@ -25,11 +23,9 @@ const config = {
 @NgModule({
   declarations: [
     AppComponent,
-    CarListComponent,
-    CarEditComponent,
     HomeComponent,
     RecipesJsonComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +33,7 @@ const config = {
     HttpClientModule,
     OktaAuthModule.initAuth(config),
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,

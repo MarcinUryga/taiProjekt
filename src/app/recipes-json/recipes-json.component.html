@@ -5,8 +5,7 @@
       <img mat-card-image class="card-image" src="{{recipe.images[0].imagesUrl}}" alt="{{recipe.title}}">
       <mat-card-content>
         <h1>{{recipe.title}}</h1>
-        <h3 mat-button [routerLink]="['/car-edit', recipe.id]">{{recipe.description}}</h3>
-        <h3 mat-button [routerLink]="['/recipe-edit', recipe.id]">{{recipe.description}}</h3>
+        <h3 mat-button title="Edit" [routerLink]="['/recipe-edit', recipe.id]">{{recipe.description}}</h3>
 
       </mat-card-content>
       <mat-card-actions>
@@ -19,4 +18,5 @@
       </mat-card-footer>
     </mat-card>
   </div>
+  <button [routerLink]="['/recipe-add']">Add recipe</button>
 </div>
