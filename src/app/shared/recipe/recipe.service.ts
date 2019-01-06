@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Category } from './recipe.model';
+import { Recipe } from './recipe.model';
 
-const spaghetti ={
+const spaghetti = {
     "id": 1,
     "categoryId": 2,
     "title": "Spaghetti",
@@ -102,52 +102,37 @@ const spaghetti ={
     ]
 };
 
-const categories = [
-  {
-    id: 1,
-    name: 'Indian',
-  },
-  {
-    id: 2,
-    name: 'Italian',
-  }
-]
-
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class RecipeService {
-  public API = '//localhost:8080';
-  public RECIPE_API = this.API + '/recipes';
+    public API = '//localhost:8080';
+    public RECIPE_API = this.API + '/recipes';
 
-  constructor(private http: HttpClient) {
-  }
-
-  getAll(): Observable<any> {
-    // return this.http.get(this.RECIPE_API + '/all');
-    return of([spaghetti]);
-  }
-
-  get(id: string) {
-    // return this.http.get(this.RECIPE_API + '/' + id);
-    return of(spaghetti);
-  }
-
-  save(recipe: any): Observable<any> {
-    let result: Observable<Object>;
-    if (recipe['href']) {
-      result = this.http.put(recipe.href, recipe);
-    } else {
-      result = this.http.post(this.RECIPE_API + '/add', recipe);
+    constructor(private http: HttpClient) {
     }
-    return result;
-  }
 
-  remove(href: string) {
-    return this.http.delete(href);
-  }
+    getAll(): Observable<Recipe> {
+        // return this.http.get(this.RECIPE_API + '/all');
+        return of([spaghetti]);
+    }
 
-  getCategories(): Observable<Category[]> {
-    return of(categories);
-  }
+    get(id: string) {
+        // return this.http.get(this.RECIPE_API + '/' + id);
+        return of(spaghetti);
+    }
+
+    save(recipe: any): Observable<Recipe> {
+        let result: Observable<Object>;
+        if (recipe['href']) {
+            result = this.http.put(recipe.href, recipe);
+        } else {
+            result = this.http.post(this.RECIPE_API + '/add', recipe);
+        }
+        return result;
+    }
+
+    remove(href: string) {
+        return this.http.delete(href);
+    }
 }

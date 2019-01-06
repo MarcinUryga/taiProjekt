@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../shared/recipe/recipe.service';
-import { Category, Recipe } from '../shared/recipe/recipe.model';
+import { Recipe } from '../shared/recipe/recipe.model';
+import { Category } from '../shared/food-category/food.category.model'
+import { FoodCategoryService } from '../shared/food-category/food.category.service';
 
 @Component({
   selector: 'app-recipes-json',
@@ -13,7 +15,7 @@ export class RecipesJsonComponent implements OnInit {
   categories: Category[];
   selectedCategory: number = null;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private categoryService: FoodCategoryService) { }
 
   ngOnInit() {
     this.recipeService.getAll().subscribe(data => {
@@ -21,7 +23,7 @@ export class RecipesJsonComponent implements OnInit {
       this.allRecipes = data;
     });
 
-    this.recipeService.getCategories().subscribe(data => {
+    this.categoryService.getCategories().subscribe(data => {
       this.categories = data;
     });
   }
