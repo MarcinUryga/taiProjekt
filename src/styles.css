@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+ mat-card {
+    float: left; 
+} 
+
+.page-name {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    background-color: #3F51B5
+}
+
+body { 
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+  }
+  
+.basic-container {
+    padding: 30px;
+}
+  
+.version-info {
+    font-size: 8pt;
+    float: right;
+}
+
+.img {
+    width: 100%;
+    margin-bottom: 18%;
+}
+  
+.card {
+    width: 29%;
+    height: 10%;
+    margin: 1%;
+}
+
+.container {
+    min-height: 100%;
+    width: 100%;
+}
+
+.card-image {
+    width: 18%;
+    height: 200px;
+}
+
+.cards {
+    margin: 0 auto;
+    width: 96%;
+}
+
+.card-footer {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    background-color: #3F51B5;
+    color: white;
+}

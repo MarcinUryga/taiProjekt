@@ -1,0 +1,22 @@
+<div class="page-name">JSON</div>
+<div class="container">
+  <div class="cards">
+    <mat-card class="card" *ngFor="let recipe of recipes">
+      <img mat-card-image class="card-image" src="{{recipe.images[0].imagesUrl}}" alt="{{recipe.title}}">
+      <mat-card-content>
+        <h1>{{recipe.title}}</h1>
+        <h3 mat-button [routerLink]="['/car-edit', recipe.id]">{{recipe.description}}</h3>
+        <h3 mat-button [routerLink]="['/recipe-edit', recipe.id]">{{recipe.description}}</h3>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-fab color="primary" [routerLink]="['/recipe-json-edit', recipe.id]">Edit</button> -->
+      </mat-card-actions>
+      <mat-card-footer>
+        <div class="card-footer">
+          Prepare time: {{recipe.prepareTime}} Cook time: {{recipe.cookTime}}
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

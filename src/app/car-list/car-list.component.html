@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="cards">
+    <mat-card class="card" *ngFor="let car of cars">
+          <img mat-card-image class="card-image" src="{{car.giphyUrl}}" alt="{{car.name}}">
+          <mat-card-content>
+            <a mat-button [routerLink]="['/car-edit', car.id]">{{car.name}}</a>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+          <mat-card-footer>
+            <div class="page-name"><p background-color="#3F51B5">ololololo</p> </div>
+          </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
