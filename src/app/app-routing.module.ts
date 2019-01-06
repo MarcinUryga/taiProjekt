@@ -4,6 +4,7 @@ import { OktaCallbackComponent } from '@okta/okta-angular';
 import { HomeComponent } from './home/home.component';
 import { RecipesJsonComponent } from './recipes-json/recipes-json.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'recipe-add',
     component: RecipeEditComponent
+  },
+  {
+    path: 'add-category',
+    component: AddCategoryComponent
   }
 ];
 

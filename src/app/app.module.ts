@@ -13,6 +13,7 @@ import { AuthInterceptor } from './shared/okta/auth.interceptor';
 import { HomeComponent } from './home/home.component';
 import { RecipesJsonComponent } from './recipes-json/recipes-json.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 const config = {
   issuer: 'https://dev-811775.oktapreview.com/oauth2/default',
@@ -26,6 +27,7 @@ const config = {
     HomeComponent,
     RecipesJsonComponent,
     RecipeEditComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <mat-card-content>
+    <form #categoryForm="ngForm" (ngSubmit)="submitForm(categoryForm)">
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Category Name"
+                required name="name"
+                [(ngModel)]="categoryName">
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <button mat-raised-button
+                type="submit">Add new category</button>
+        <button mat-raised-button color="error"
+                [routerLink]="['/recipes-json']"
+                type="button">Cancel</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</div>
