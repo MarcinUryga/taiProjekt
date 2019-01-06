@@ -6,9 +6,6 @@ body {
     margin: 0;
     font-family: Roboto, sans-serif;
 }
- mat-card {
-    float: left; 
-} 
 
 .page-name {
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
@@ -17,15 +14,15 @@ body {
     background-color: #3F51B5
 }
 
-body { 
+body {
     font-family: Roboto, Arial, sans-serif;
     margin: 0;
   }
-  
+
 .basic-container {
     padding: 30px;
 }
-  
+
 .version-info {
     font-size: 8pt;
     float: right;
@@ -35,11 +32,12 @@ body {
     width: 100%;
     margin-bottom: 18%;
 }
-  
-.card {
+
+.card-wrapper {
     width: 29%;
     height: 10%;
     margin: 1%;
+    margin-left: 0;
 }
 
 .container {
@@ -55,6 +53,7 @@ body {
 .cards {
     margin: 0 auto;
     width: 96%;
+    margin-bottom: 50px;
 }
 
 .card-footer {
